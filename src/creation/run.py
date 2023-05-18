@@ -12,15 +12,12 @@ from create_data import execute  # noqa E402
 def runer(arg: Namespace):
     params = get_params(arg.params) if arg.params else {}
     config_params = get_params(arg.config) if arg.config else {}
-    report_params = get_params(arg.report) if arg.report else {}
     named_arguments = get_named_params(('input', arg.input), ('output', arg.output))
     params.update(config_params)
-    params.update(report_params)
     params.update(named_arguments)
-    print(params)
     report = execute(params)
     give_params(arg.report, report)
 
 
-if __name__ == "__mina__":
+if __name__ == "__main__":
     runer()

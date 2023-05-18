@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  creation:
+    cmd: python src/creation/run.py --output data/raw/data.pickle --report params/report_params/creation.yaml
+    deps:
+    - path: src/creation/run.py
+      md5: 57a2aff35c05c2ea208d168738fcc78d
+      size: 734
+    outs:
+    - path: data/raw/data.pickle
+      md5: 47c8501788c2ff269467dd4d862d3c3e
+      size: 7216
+    - path: params/report_params/creation.yaml
+      md5: a2e2a88bc5794bb23951f372809e1ab9
+      size: 92

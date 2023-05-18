@@ -1,8 +1,6 @@
 stages:
   creation:
-    cmd: python src/creation/run.py \
-      --output ${output_creation} \
-      --report ${report_params_creation}
+    cmd: python src/creation/run.py --output ${output_creation} --report ${report_params_creation}
     deps:
       - src/creation/run.py
     outs:
