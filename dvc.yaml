@@ -1,5 +1,10 @@
 stages:
-  preparation:
-    cmd: python src/main.py
+  creation:
+    cmd: python src/creation/run.py \
+      --output ${output_creation} \
+      --report ${report_params_creation}
     deps:
-      - src/main.py
+      - src/creation/run.py
+    outs:
+      - ${output_creation}
+      - ${report_params_creation}

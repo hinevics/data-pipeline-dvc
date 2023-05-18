@@ -1,0 +1,4 @@
+output_creation: data/raw/data.pickle
+report_params_creation: params/report_params/creation.yaml
+additional_params_preparation: config/preparation.yaml
+stage_params_preparation: params/preparation.yaml
