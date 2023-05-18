@@ -1,8 +1,0 @@
-schema: '2.0'
-stages:
-  start:
-    cmd: python src/main.py
-    deps:
-    - path: src/main.py
-      md5: 3bce4622c3729e76a424b75d5d20700d
-      size: 71

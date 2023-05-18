@@ -4,6 +4,7 @@ from typing import Any
 
 
 def give_params(configpath: str, params: dict[str, Any]):
+    # чтото
     with open(file=configpath, mode='w') as file:
         yaml.dump(params, file)
 
