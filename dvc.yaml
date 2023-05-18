@@ -1,0 +1,5 @@
+stages:
+  preparation:
+    cmd: python src/main.py
+    deps:
+      - src/main.py
