@@ -14,6 +14,13 @@ def argparser_wrapper(handle):  # TODO переиеновать его тк я �
             default=None
             )
         parser.add_argument(
+            '-a',
+            '--additional',
+            help='Path to the additional parameters',
+            type=str,
+            default=None
+            )
+        parser.add_argument(
             '-c',
             '--config',
             help='Path to the config parameters',

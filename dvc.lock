@@ -3,13 +3,19 @@ stages:
   creation:
     cmd: python src/creation/run.py --output data/raw/data.pickle --report params/report_params/creation.yaml
     deps:
+    - path: src/creation/create_data.py
+      md5: c97806ba1bbec92f5793d072356e37d8
+      size: 1382
     - path: src/creation/run.py
       md5: 57a2aff35c05c2ea208d168738fcc78d
       size: 734
     outs:
     - path: data/raw/data.pickle
-      md5: 47c8501788c2ff269467dd4d862d3c3e
-      size: 7216
+      md5: 6be5d486c7baa118742103f573e35884
+      size: 7196
     - path: params/report_params/creation.yaml
-      md5: a2e2a88bc5794bb23951f372809e1ab9
-      size: 92
+      md5: 3462bed7d12b736f5c3d8b858d69d6ef
+      size: 131
+  prepare_data:
+    cmd: python src/prepare_data/run.py --input data/raw/data.pickle --params params/stage_params/prepare_data.yaml
+      --additional params/report_params/creation.yaml
