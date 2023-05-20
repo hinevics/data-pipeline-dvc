@@ -18,4 +18,24 @@ stages:
       size: 131
   prepare_data:
     cmd: python src/prepare_data/run.py --input data/raw/data.pickle --params params/stage_params/prepare_data.yaml
-      --additional params/report_params/creation.yaml
+      --additional params/report_params/creation.yaml --report params/report_params/prepare_data.yaml
+    deps:
+    - path: data/raw/data.pickle
+      md5: 6be5d486c7baa118742103f573e35884
+      size: 7196
+    - path: params/report_params/creation.yaml
+      md5: 3462bed7d12b736f5c3d8b858d69d6ef
+      size: 131
+    - path: params/stage_params/prepare_data.yaml
+      md5: 49d01382591d694844bdac6321ccdfbe
+      size: 105
+    - path: src/prepare_data/run.py
+      md5: 0c71ce4db33130a34174dbea7e49e631
+      size: 1229
+    - path: src/prepare_data/sepal_length.py
+      md5: 24136b8a0ef6c8a796e5cab309299d2d
+      size: 576
+    outs:
+    - path: params/report_params/prepare_data.yaml
+      md5: 31c62e96c20773ecc01669e7e31f2277
+      size: 76

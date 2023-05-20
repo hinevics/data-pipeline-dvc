@@ -14,24 +14,25 @@ def runer(arg: Namespace):
     params = get_params(arg.params) if arg.params else {}
     config = get_params(arg.config) if arg.config else {}
     additional = get_params(arg.additional) if arg.additional else {}
-    report = get_params(arg.report) if arg.report else {}
     named_arguments = get_named_params(
         ('input', arg.input), ('output', arg.output)
     )
     params.update(config)
     params.update(additional)
-    params.update(report)
     params.update(named_arguments)
     feature: str = params.get('feature_list')[0]
-    run_file: str = params.get('run_files').format(feature_name=feature)
+    run_file: str = params.get('prepare_run_files').format(feature_name=feature)
     output: str = params.get('prepare_output').format(feature_name=feature)
     subprocess.run(
-        ['python', run_file, '--input', arg.input, '--output', output]
+        ['python', run_file,
+         '--input', arg.input,
+         '--output', output,
+         '--params']
     )
+    # 
     report = {
         'feature': feature,
         'output_{}'.format(feature): output
-
     }
     give_params(arg.report, report)
 

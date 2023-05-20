@@ -5,9 +5,9 @@ from utils import get_params, get_named_params
 
 
 def wrapper(func, params):
-    df = pd.read_parquet(params['input_data'])
+    df: pd.DataFrame = pd.read_pickle(params['input'])
     df = func(df, params)
-    df.to_parquet(params['output_data'])
+    df.to_pickle(params['output'])
     return df
 
 

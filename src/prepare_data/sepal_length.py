@@ -11,9 +11,11 @@ def update_features(x: float):
 
 
 @feature_wrapper
-def sepal_length(df: pd.DataFrame | None = None, params: dict[str, Any] | None = None):
+def sepal_length(df: pd.DataFrame | None = None,
+                 params: dict[str, Any] | None = None) -> pd.DataFrame:
     df[params.get('feature')] = df[params.get('feature')].fillna(0)
     df[params.get('feature')] = df[params.get('feature')].map(update_features)
+    return df
 
 
 if __name__ == "__main__":

@@ -52,3 +52,6 @@ def argparser_wrapper(handle):  # TODO переиеновать его тк я �
         args = parser.parse_args()
         args.callback(args)
     return wrapper
+
+
+def argparser_wrapper_feature
