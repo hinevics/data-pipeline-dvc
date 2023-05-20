@@ -20,7 +20,7 @@ def runer(arg: Namespace):
     params.update(config)
     params.update(additional)
     params.update(named_arguments)
-    features: str = params.get('feature_list')
+    features: str = params.get('processed_features')
     report = {
         'feature': [],
         'output': []
@@ -34,8 +34,8 @@ def runer(arg: Namespace):
             '--output', output,
             '--feature', f]
         )
-        report['feature'] = report['feature'].append(f)
-        report['outputs'] = report['output'].append(output)
+        report['feature'].append(f)
+        report['output'].append(output)
     give_params(arg.report, report)
 
 
