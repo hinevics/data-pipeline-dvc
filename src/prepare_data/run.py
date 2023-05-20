@@ -20,11 +20,13 @@ def runer(arg: Namespace):
     params.update(config)
     params.update(additional)
     params.update(named_arguments)
-    features: str = params.get('processed_features')
+    features: list[str] = params.get('processed_features')
+    targets: list[str] = params.get('processed_target', None)
     report = {
         'feature': [],
         'feature_output': []
     }
+    features = [*features, *targets] if targets else features
     for f in features:
         run_file: str = params.get('prepare_run_files').format(feature_name=f)
         output: str = params.get('prepare_output').format(feature_name=f)
