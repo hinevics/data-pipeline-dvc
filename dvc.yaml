@@ -12,6 +12,7 @@ stages:
     deps:
       - src/prepare_data/run.py
       - src/prepare_data/sepal_length.py
+      - src/prepare_data/sepal_width.py
       - ${input_prepare_data}
       - ${stage_params_prepare_data}
       - ${additional_params_prepare_data}

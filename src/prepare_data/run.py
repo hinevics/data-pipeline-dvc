@@ -20,20 +20,22 @@ def runer(arg: Namespace):
     params.update(config)
     params.update(additional)
     params.update(named_arguments)
-    feature: str = params.get('feature_list')[0]
-    run_file: str = params.get('prepare_run_files').format(feature_name=feature)
-    output: str = params.get('prepare_output').format(feature_name=feature)
-    subprocess.run(
-        ['python', run_file,
-         '--input', arg.input,
-         '--output', output,
-         '--feature', feature]
-    )
-
+    features: str = params.get('feature_list')
     report = {
-        'feature': feature,
-        'output_{}'.format(feature): output
+        'feature': [],
+        'output': []
     }
+    for f in features:
+        run_file: str = params.get('prepare_run_files').format(feature_name=f)
+        output: str = params.get('prepare_output').format(feature_name=f)
+        subprocess.run([
+            'python', run_file,
+            '--input', arg.input,
+            '--output', output,
+            '--feature', f]
+        )
+        report['feature'] = report['feature'].append(f)
+        report['outputs'] = report['output'].append(output)
     give_params(arg.report, report)
 
 

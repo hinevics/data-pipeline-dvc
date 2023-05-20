@@ -35,6 +35,9 @@ stages:
     - path: src/prepare_data/sepal_length.py
       md5: 24136b8a0ef6c8a796e5cab309299d2d
       size: 576
+    - path: src/prepare_data/sepal_width.py
+      md5: 3058cdf9e3eb5c4d15d2c92f9f2ce369
+      size: 601
     outs:
     - path: params/report_params/prepare_data.yaml
       md5: 31c62e96c20773ecc01669e7e31f2277
