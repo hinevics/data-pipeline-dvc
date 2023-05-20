@@ -9,5 +9,5 @@ additional_params_prepare_data: params/report_params/creation.yaml
 report_params_prepare_data: params/report_params/prepare_data.yaml
 
 # merge_columns
-# output_merge_columns: data/interim/data.pickle
-# additional_params_merge_columns: params/report_params/prepare_data.yaml
+output_merge_columns: data/interim/data.pickle
+additional_params_merge_columns: params/report_params/prepare_data.yaml

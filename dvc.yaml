@@ -18,10 +18,10 @@ stages:
       - ${additional_params_prepare_data}
     outs:
       - ${report_params_prepare_data}
-  # merge_columns:
-  #   cmd: python src/merge_columns/run.py --additional ${additional_params_merge_columns} --output ${output_merge_columns}
-  #   deps:
-  #     - src/merge_columns/run.py
-  #     - ${additional_params_merge_columns}
-  #   outs:
-  #     - ${output_merge_columns}
+  merge_columns:
+    cmd: python src/merge_columns/run.py --additional ${additional_params_merge_columns} --output ${output_merge_columns}
+    deps:
+      - src/merge_columns/run.py
+      - ${additional_params_merge_columns}
+    outs:
+      - ${output_merge_columns}

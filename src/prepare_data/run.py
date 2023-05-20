@@ -23,7 +23,7 @@ def runer(arg: Namespace):
     features: str = params.get('processed_features')
     report = {
         'feature': [],
-        'output': []
+        'feature_output': []
     }
     for f in features:
         run_file: str = params.get('prepare_run_files').format(feature_name=f)
@@ -35,7 +35,7 @@ def runer(arg: Namespace):
             '--feature', f]
         )
         report['feature'].append(f)
-        report['output'].append(output)
+        report['feature_output'].append(output)
     give_params(arg.report, report)
 
 
