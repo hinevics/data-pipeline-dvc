@@ -11,9 +11,13 @@ from merge import execute  # noqa E402
 @argparser_wrapper
 def runer(arg: Namespace):
     params = get_params(arg.params) if arg.params else {}
-    config_params = get_params(arg.config) if arg.config else {}
-    named_arguments = get_named_params(('input', arg.input), ('output', arg.output))
-    params.update(config_params)
+    config = get_params(arg.config) if arg.config else {}
+    additional = get_params(arg.additional) if arg.additional else {}
+    named_arguments = get_named_params(
+        ('input', arg.input), ('output', arg.output)
+    )
+    params.update(config)
+    params.update(additional)
     params.update(named_arguments)
     report = execute(params)
     if report:
