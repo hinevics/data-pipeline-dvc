@@ -15,7 +15,7 @@ def update_features(x: float):
 def sepal_width(df: pd.DataFrame | None = None,
                 params: dict[str, Any] | None = None) -> pd.DataFrame:
     feature = params.get('feature')
-    df = df[[feature]]
+    df = df[[feature]].copy()
     return df
 
 

@@ -14,7 +14,7 @@ def update_features(x: float):
 def sepal_length(df: pd.DataFrame | None = None,
                  params: dict[str, Any] | None = None) -> pd.DataFrame:
     feature = params.get('feature')
-    df = df[[feature]]
+    df = df[[feature]].copy()
     df[feature] = df[feature].fillna(0)
     df[feature] = df[feature].map(update_features)
     return df
