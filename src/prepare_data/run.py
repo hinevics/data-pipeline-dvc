@@ -27,9 +27,9 @@ def runer(arg: Namespace):
         ['python', run_file,
          '--input', arg.input,
          '--output', output,
-         '--params']
+         '--feature', feature]
     )
-    # 
+
     report = {
         'feature': feature,
         'output_{}'.format(feature): output

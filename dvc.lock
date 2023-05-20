@@ -30,8 +30,8 @@ stages:
       md5: 49d01382591d694844bdac6321ccdfbe
       size: 105
     - path: src/prepare_data/run.py
-      md5: 0c71ce4db33130a34174dbea7e49e631
-      size: 1229
+      md5: fa325d0ab791e8950ed47c07b80ba044
+      size: 1272
     - path: src/prepare_data/sepal_length.py
       md5: 24136b8a0ef6c8a796e5cab309299d2d
       size: 576

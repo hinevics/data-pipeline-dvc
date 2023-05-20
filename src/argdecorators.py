@@ -48,10 +48,14 @@ def argparser_wrapper(handle):  # TODO переиеновать его тк я �
             type=str,
             default=None
         )
+        parser.add_argument(
+            '-f',
+            '--feature',
+            help='Name feature for run',
+            type=str,
+            default=None
+        )
         parser.set_defaults(callback=handle)
         args = parser.parse_args()
         args.callback(args)
     return wrapper
-
-
-def argparser_wrapper_feature

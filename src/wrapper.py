@@ -18,7 +18,11 @@ def feature_wrapper(func):
         config = get_params(arg.config) if arg.config else {}
         additional = get_params(arg.additional) if arg.additional else {}
         report = get_params(arg.report) if arg.report else {}
-        named_arguments = get_named_params(('input', arg.input), ('output', arg.output))
+        named_arguments = get_named_params(
+            ('input', arg.input),
+            ('output', arg.output),
+            ('feature', arg.feature)
+        )
         params.update(config)
         params.update(additional)
         params.update(report)
