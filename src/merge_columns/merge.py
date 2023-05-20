@@ -3,8 +3,8 @@ import pandas as pd
 
 
 def mergeer(features: list[str], merge_output: str):
-    datas = [pd.read_pickle(f) for f in ]
-    datas.to_pickle()
+    datas = [pd.read_pickle(f) for f in features]
+    datas.to_pickle(merge_output)
 
 
 def execute(params: dict[str, Any]) -> dict[str, Any] | None:
