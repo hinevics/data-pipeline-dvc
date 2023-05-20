@@ -42,3 +42,17 @@ stages:
     - path: params/report_params/prepare_data.yaml
       md5: 01271304909ae0662707aa4a59ac859d
       size: 123
+  merge_columns:
+    cmd: python src/merge_columns/run.py --additional params/report_params/prepare_data.yaml
+      --output data/interim/data.pickle
+    deps:
+    - path: params/report_params/prepare_data.yaml
+      md5: 01271304909ae0662707aa4a59ac859d
+      size: 123
+    - path: src/merge_columns/run.py
+      md5: 3434516743160ffea94c417df197d154
+      size: 847
+    outs:
+    - path: data/interim/data.pickle
+      md5: e39b0180e782272fb91124a10f89b465
+      size: 16032

@@ -5,7 +5,7 @@ import pandas as pd
 def mergeer(features: list[str], merge_output: str):
     datas = [pd.read_pickle(f) for f in features]
     merge_data = pd.concat(datas)
-    datas.to_pickle(merge_data)
+    merge_data.to_pickle(merge_output)
 
 
 def execute(params: dict[str, Any]) -> dict[str, Any] | None:
