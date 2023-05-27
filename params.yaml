@@ -1,0 +1,13 @@
+# creation
+output_creation: data/raw/data.pickle
+report_params_creation: params/report_params/creation.yaml
+
+# prepare_data
+input_prepare_data: data/raw/data.pickle
+stage_params_prepare_data: params/stage_params/prepare_data.yaml
+additional_params_prepare_data: params/report_params/creation.yaml
+report_params_prepare_data: params/report_params/prepare_data.yaml
+
+# merge_columns
+output_merge_columns: data/interim/data.pickle
+additional_params_merge_columns: params/report_params/prepare_data.yaml

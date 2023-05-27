@@ -1,0 +1,28 @@
+stages:
+  creation:
+    cmd: python src/creation/run.py --output ${output_creation} --report ${report_params_creation}
+    deps:
+      - src/creation/create_data.py
+      - src/creation/run.py
+    outs:
+      - ${output_creation}
+      - ${report_params_creation}
+  prepare_data:
+    cmd: python src/prepare_data/run.py --input ${input_prepare_data} --params ${stage_params_prepare_data} --additional ${additional_params_prepare_data} --report ${report_params_prepare_data}
+    deps:
+      - src/prepare_data/run.py
+      - src/prepare_data/sepal_length.py
+      - src/prepare_data/sepal_width.py
+      - src/prepare_data/target.py
+      - ${input_prepare_data}
+      - ${stage_params_prepare_data}
+      - ${additional_params_prepare_data}
+    outs:
+      - ${report_params_prepare_data}
+  merge_columns:
+    cmd: python src/merge_columns/run.py --additional ${additional_params_merge_columns} --output ${output_merge_columns}
+    deps:
+      - src/merge_columns/run.py
+      - ${additional_params_merge_columns}
+    outs:
+      - ${output_merge_columns}
